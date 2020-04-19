@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-LABEL "com.github.actions.name"="X-Wei's pelican blog for GitHub Pages"
+LABEL "com.github.actions.name"="Github Actions for x-wei's pelican blog"
 LABEL "com.github.actions.description"="Builds and deploys X-Wei's pelican blogs to GitHub Pages."
 LABEL "com.github.actions.icon"="home"
 LABEL "com.github.actions.color"="red"
