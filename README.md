@@ -2,7 +2,7 @@
 
 **Note:** this repo is still work-in-progress.
 
-Github actions config for building x-wei's static [blog](https://x-wei.github.io) 
+Github actions config for building x-wei's static [blog](https://x-wei.github.io)
 with pelican and the customized bootstrap3 theme adopted from
 [farseerfc](https://github.com/farseerfc/pelican-bootstrap3).
 
