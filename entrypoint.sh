@@ -18,7 +18,7 @@ locale-gen zh_CN.UTF-8 && \
     locale -a
 
 echo '=================== Building blog ==================='
-cd pelican_dir && make publish
+cd pelican_dir && make publish && cd ..
 
 
 echo '=================== Publish to GitHub Pages ==================='
