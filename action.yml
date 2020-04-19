@@ -1,0 +1,16 @@
+name: Github Actions for x-wei's pelican blog
+description: Builds and deploys X-Wei's pelican blogs to GitHub Pages.
+
+branding:
+  icon: 'home'
+  color: 'red'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+inputs:
+  GH_PAGES_BRANCH:
+    description: 'override the default `gh-pages` deployment branch'
+    required: false
+    default: 'gh-pages'
