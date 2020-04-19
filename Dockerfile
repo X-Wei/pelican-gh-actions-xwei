@@ -8,9 +8,10 @@ LABEL "com.github.actions.color"="red"
 LABEL "Name"="Pelican for X-Wei's blog"
 LABEL "Version"="0.0.1"
 
+COPY requirements.txt .
+
 # Main reference: https://github.com/farseerfc/farseerfc/blob/master/.travis.yml
-RUN echo && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y wget git locales python-pip sed && \
     apt-get install -y ditaa parallel graphviz fonts-noto-cjk && \
     pip install -r requirements.txt && \
@@ -49,8 +50,12 @@ RUN locale-gen zh_CN.UTF-8 && \
     locale-gen ja_JP.UTF-8 && \
     locale -a
 
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 # Build blog.
-RUN mkdir -p /home/blog && cd /home/blog
+# RUN mkdir -p /home/blog && cd /home/blog
 
 # Now we can build the blog.
 # RUN git clone --depth=1 --branch=master https://github.com/X-Wei/x-wei.github.com.git pelican-blog && \
