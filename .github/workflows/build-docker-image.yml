@@ -1,0 +1,19 @@
+name: Publish Docker image
+on:
+  release:
+    types: [published]
+jobs:
+  push_to_registries:
+    runs-on: ubuntu-latest
+    name: Push Docker image to github packages
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.MY_GH_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: x-wei/xwei-pelican
+          tag_with_ref: true
