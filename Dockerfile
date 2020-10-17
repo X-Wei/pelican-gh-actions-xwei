@@ -6,7 +6,7 @@ LABEL "com.github.actions.icon"="home"
 LABEL "com.github.actions.color"="red"
 
 LABEL "Name"="Pelican for X-Wei's blog"
-LABEL "Version"="0.0.1"
+LABEL "Version"="0.0.3"
 
 COPY requirements.txt .
 
@@ -38,7 +38,7 @@ RUN git clone --depth 1 https://github.com/farseerfc/opencc-bin opencc-bin && \
     cd .. && \
     opencc --version
 
-# Add locale
+# Add locales
 # Copied from https://stackoverflow.com/a/38553499
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
@@ -53,11 +53,3 @@ RUN locale-gen zh_CN.UTF-8 && \
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-
-# Build blog.
-# RUN mkdir -p /home/blog && cd /home/blog
-
-# Now we can build the blog.
-# RUN git clone --depth=1 --branch=master https://github.com/X-Wei/x-wei.github.com.git pelican-blog && \
-#     cd pelican-blog/pelican_dir && \
-#     make html # serve / publish
