@@ -2,7 +2,7 @@ Babel==2.3.4
 backports.functools-lru-cache==1.6.1
 beautifulsoup4==4.5.1
 blinker==1.4
-cryptography==1.7.1
+cryptography==3.2
 docutils==0.15.2
 enum34==1.1.6
 feedgenerator==1.9
