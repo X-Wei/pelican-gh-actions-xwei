@@ -17,7 +17,7 @@ pelican==3.6.3
 Py3Babel==0.2
 pyasn1==0.1.9
 pycrypto==2.6.1
-Pygments==2.5.2
+Pygments==2.7.4
 pygobject==3.22.0
 python-dateutil==2.8.1
 pytz==2019.3
